@@ -22,7 +22,16 @@ Tabel Kategori
     <td>{{$data->id}}</td>
     <td>{{$data->nama_kategori}}</td>
     <td>{{$data->kode_kategori}}</td>
-    <td><a href="{{url('kategori/'.$data->id)}}" class="btn btn-secondary">lihat</a></td>
+    <td>
+    <!-- lihat -->
+    <a href="{{url('kategori/'.$data->id)}}" class="btn btn-secondary">lihat</a>
+    <!-- hapus -->
+    <form action="{{url('kategori/'.$data->id)}}" method="post">
+    @csrf
+    @method('DELETE')
+    <button type="submit" class="btn btn-danger">hapus</button>
+    </form>
+    </td>
     </tr>
     @endforeach
     </tbody>
