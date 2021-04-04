@@ -19,7 +19,7 @@ Tabel Barang
     <tr>
     <td>{{$data->id}}</td>
     <td>{{$data->nama_barang}}</td>
-    <td>{{$data->kategoris_id}}</td>
+    <td>{{$data->nama_kategori}}</td>
     </tr>
     @endforeach
     </tbody>

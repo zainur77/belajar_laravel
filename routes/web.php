@@ -22,8 +22,12 @@ Route::get('/', function () {
 });
 
 Route::get('/kategori', [KategoriController::class, 'index']);
+Route::post('/kategori', [KategoriController::class, 'store']);
+Route::get('/kategori/create', [KategoriController::class, 'create']);
 
 Route::get('/pegawai', [PegawaiController::class, 'index']);
+Route::post('/pegawai', [PegawaiController::class, 'store']);
+Route::get('/pegawai/create', [PegawaiController::class, 'create']);
 
 Route::get('/barang', [BarangController::class, 'index']);
 

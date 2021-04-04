@@ -10,6 +10,7 @@ Tabel Transaksi
     <thead>
         <tr>
             <th>ID</th>
+            <th>TANGGAL TRANSAKSI</th>
             <th>NAMA PEGAWAI</th>
             <th>BARANG TRANSAKSI</th>
         </tr>
@@ -18,8 +19,9 @@ Tabel Transaksi
     @foreach ($transaksi as $data)
         <tr>
         <td>{{$data->id}}</td>
-        <td>{{$data->pegawai_id}}</td>
-        <td>{{$data->barangs_id}}</td>
+        <td>{{$data->tgl_transaksi}}</td>
+        <td>{{$data->nama_pegawai}}</td>
+        <td>{{$data->nama_barang}}</td>
         </tr>
     @endforeach
     </tbody>

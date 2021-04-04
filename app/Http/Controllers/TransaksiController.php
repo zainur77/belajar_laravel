@@ -15,7 +15,10 @@ class TransaksiController extends Controller
     public function index()
     {
         //
-        $transaksi=DB::table('transaksis')->get();
+        $transaksi=DB::table('transaksis')
+        ->join('pegawai', 'transaksis.pegawai_id', '=', 'pegawai.id')
+        ->join('barangs', 'transaksis.barang_id', '=', 'barangs.id')
+        ->get();
         return view('transaksi.index', compact('transaksi'));
     }
 

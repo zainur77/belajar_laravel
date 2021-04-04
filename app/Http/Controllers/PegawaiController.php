@@ -27,6 +27,7 @@ class PegawaiController extends Controller
     public function create()
     {
         //
+        return view('pegawai.create');
     }
 
     /**
@@ -38,6 +39,13 @@ class PegawaiController extends Controller
     public function store(Request $request)
     {
         //
+        DB::table('pegawai')->insert([
+            'nama_pegawai' =>$request->nama_pegawai,
+            'alamat_pegawai' =>$request->alamat_pegawai,
+            'no_hp' =>$request->no_hp
+        ]);
+
+        return redirect('/pegawai');
     }
 
     /**

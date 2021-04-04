@@ -15,7 +15,9 @@ class BarangController extends Controller
     public function index()
     {
         //
-        $barang=DB::table('barangs')->get();
+        $barang=DB::table('barangs')
+        ->join('kategoris', 'barangs.kategori_id','=','kategoris.id')
+        ->get();
         return view('barang.index', compact('barang'));
     }
 
