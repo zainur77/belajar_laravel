@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class KatagoriController extends Controller
+class BarangController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,9 @@ class KatagoriController extends Controller
      */
     public function index()
     {
-        // untuk menampilkan
+        //
+        $barang=DB::table('barangs')->get();
+        return view('barang.index', compact('barang'));
     }
 
     /**
@@ -23,7 +26,7 @@ class KatagoriController extends Controller
      */
     public function create()
     {
-        //untuk menambah data
+        //
     }
 
     /**
@@ -34,7 +37,7 @@ class KatagoriController extends Controller
      */
     public function store(Request $request)
     {
-        //untuk menyimpan data baru
+        //
     }
 
     /**
@@ -45,7 +48,7 @@ class KatagoriController extends Controller
      */
     public function show($id)
     {
-        //untuk menampilkan rincian
+        //
     }
 
     /**
@@ -56,7 +59,7 @@ class KatagoriController extends Controller
      */
     public function edit($id)
     {
-        //untuk mengubah
+        //
     }
 
     /**
@@ -68,7 +71,7 @@ class KatagoriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //untuk menyimpan data yang berubah 
+        //
     }
 
     /**
@@ -79,6 +82,6 @@ class KatagoriController extends Controller
      */
     public function destroy($id)
     {
-        //untuk menghapus data
+        //
     }
 }

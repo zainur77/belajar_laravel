@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\BarangController;
+use App\Http\Controllers\TransaksiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +18,13 @@ use Illuminate\Support\Facades\DB;
 */
 
 Route::get('/', function () {
-    $kategori=DB::table('kategoris')->get();
-    // return $kategori;
-    return view('kategori.index',compact('kategori'));
+    return view('welcome');
 });
+
+Route::get('/kategori', [KategoriController::class, 'index']);
+
+Route::get('/pegawai', [PegawaiController::class, 'index']);
+
+Route::get('/barang', [BarangController::class, 'index']);
+
+Route::get('/transaksi', [TransaksiController::class, 'index']);

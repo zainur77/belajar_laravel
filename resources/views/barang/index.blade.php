@@ -1,25 +1,25 @@
 @extends('layouts.master')
 @section('judul')
-Kategori
+Barang
 @endsection
 @section('nama')
-Tabel Kategori
+Tabel Barang
 @endsection
 @section('konten')
 <table class="table table-bordered">
     <thead>
         <tr>
             <th>ID</th>
-            <th>NAMA KATEGORI</th>
-            <th>KODE KATEGORI</th>
+            <th>NAMA BARANG</th>
+            <th>KATEGORI BARANG</th>
         </tr>
     </thead>
     <tbody>
-    @foreach($kategori as $data)
+    @foreach ($barang as $data)
     <tr>
     <td>{{$data->id}}</td>
-    <td>{{$data->nama_kategori}}</td>
-    <td>{{$data->kode_kategori}}</td>
+    <td>{{$data->nama_barang}}</td>
+    <td>{{$data->kategoris_id}}</td>
     </tr>
     @endforeach
     </tbody>
